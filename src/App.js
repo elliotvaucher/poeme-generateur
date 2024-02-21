@@ -44,7 +44,7 @@ function App() {
 
   const handlePoemSubmission = async (formData) => {
     try {
-      const response = await fetch('http://localhost:3001/generate-poem', {
+      const response = await fetch('/.netlify/functions/generate-poem', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
