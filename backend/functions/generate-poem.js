@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
   }
 
   const { theme, languageRegister, poemType, keywords, specialRequests } = JSON.parse(event.body);
-  const promptMessage = `Write a poem in a '${poemType}' style about '${theme}'. The language should be '${languageRegister}'. Include keywords '${keywords}'. ${specialRequests}`;
+  const promptMessage = `Write a poem with a '${poemType}' structure about '${theme}'. The language should be '${languageRegister}'. Include keywords '${keywords}'. Write the poem in French. ${specialRequests}`;
 
   try {
     const response = await axios.post('https://api.openai.com/v1/chat/completions', {
