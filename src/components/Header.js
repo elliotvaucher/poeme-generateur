@@ -7,7 +7,7 @@ const Header = () => (
     <Container maxWidth="lg">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Générateur de poème
+          Générateur de poèmes
         </Typography>
         <Button color="inherit" component={RouterLink} to="/">
           Accueil
