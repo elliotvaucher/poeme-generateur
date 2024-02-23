@@ -1,23 +1,21 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Container, createTheme, ThemeProvider, CssBaseline, TextField } from '@mui/material';
+import { Container, createTheme, ThemeProvider, CssBaseline, TextField, LinearProgress } from '@mui/material';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import PoemForm from './components/PoemForm';
 import Footer from './components/Footer';
-import Blog from './components/Blog'; // Assume you have a Blog component
-import Article from './components/Article'; // Assume you have an Article component
-//import About from './components/About'; // Assume you have an About component
+import Blog from './components/Blog';
+import Article from './components/Article';
 
-// Create a brutalist theme
 const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#d32f2f', // A strong, attention-grabbing color
+      main: '#d32f2f',
     },
     background: {
-      default: '#000000', // Black background for high contrast
+      default: '#000000',
       paper: '#1c1c1c',
     },
   },
@@ -41,8 +39,10 @@ const theme = createTheme({
 
 function App() {
   const [poem, setPoem] = useState('');
+  const [isLoading, setIsLoading] = useState(false); // Loading state
 
   const handlePoemSubmission = async (formData) => {
+    setIsLoading(true); // Start loading
     try {
       const response = await fetch('/.netlify/functions/generate-poem', {
         method: 'POST',
@@ -56,16 +56,18 @@ function App() {
     } catch (error) {
       console.error('Error fetching poem:', error);
     }
+    setIsLoading(false); // End loading
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline /> {/* Provides a consistent baseline for styling */}
+      <CssBaseline />
       <Router>
-      <Header />
-      <Container maxWidth="lg" sx={{ marginTop: 4, marginBottom: 4 }}>
-      <Routes>
-      <Route path="/" element={
+        <Header />
+        <Container maxWidth="lg" sx={{ marginTop: 4, marginBottom: 4 }}>
+          {isLoading && <LinearProgress color="primary" />} {/* LinearProgress shows when isLoading is true */}
+          <Routes>
+            <Route path="/" element={
               <>
                 <HeroSection />
                 <PoemForm onSubmit={handlePoemSubmission} />
@@ -84,10 +86,9 @@ function App() {
             } />
             <Route path="/blog" element={<Blog />} />
             <Route path="/article/:articleId" element={<Article />} />
-{/*             <Route path="/about" element={<About />} /> */}
-      </Routes>
-        <Footer />
-      </Container>
+          </Routes>
+          <Footer />
+        </Container>
       </Router>
     </ThemeProvider>
   );
