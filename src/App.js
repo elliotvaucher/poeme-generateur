@@ -7,6 +7,7 @@ import PoemForm from './components/PoemForm';
 import Footer from './components/Footer';
 import Blog from './components/Blog';
 import Article from './components/Article';
+import About from './components/About';
 
 const theme = createTheme({
   palette: {
@@ -85,6 +86,7 @@ function App() {
               </>
             } />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/about" element={<About />} />
             <Route path="/article/:articleId" element={<Article />} />
           </Routes>
           <Footer />

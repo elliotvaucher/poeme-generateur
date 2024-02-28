@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
 
   try {
     const response = await axios.post('https://api.openai.com/v1/chat/completions', {
-      model: 'gpt-3.5-turbo', // Ensure this is the correct model for your use case
+      model: 'gpt-3.5-turbo',
       messages: [{
         role: "system",
         content: "You are a highly skilled poet."

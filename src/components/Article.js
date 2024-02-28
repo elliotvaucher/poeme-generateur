@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Typography, Container } from '@mui/material';
+import ReactMarkdown from 'react-markdown';
 
 const Article = () => {
-  const { articleId } = useParams(); // Get the article ID from the URL
+  const { articleId } = useParams();
+  const [content, setContent] = useState('');
+
+  useEffect(() => {
+    // Dynamically import the Markdown file based on articleId
+    import(`../articles/${articleId}.md`)
+      .then(res => {
+        // Fetch the raw content of the markdown file
+        return fetch(res.default)
+          .then(response => response.text())
+          .then(text => setContent(text));
+      })
+      .catch(err => console.log(err));
+  }, [articleId]);
+
   return (
     <Container>
-      <Typography variant="h2" component="h1" gutterBottom>
-        Heading 1 - Article {articleId}
-      </Typography>
-      <Typography variant="body1" paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.
-      </Typography>
-      {/* Add more paragraphs as needed */}
+      {/* Render the Markdown content */}
+      <ReactMarkdown children={content} />
     </Container>
   );
 };
