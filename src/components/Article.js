@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Typography, Container } from '@mui/material';
+import { Container } from '@mui/material';
 import ReactMarkdown from 'react-markdown';
 
 const Article = () => {
