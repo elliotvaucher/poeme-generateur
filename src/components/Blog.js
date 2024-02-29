@@ -4,8 +4,9 @@ import { Masonry } from '@mui/lab';
 import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 
 const blogPosts = [
-  { title: 'Post 1', summary: 'Summary of post 1', id: 1, image: 'url-to-image-1' },
-  { title: 'Post 2', summary: 'Summary of post 2', id: 2, image: 'url-to-image-2' },
+  { title: "Poèmes pour Maman : Une Ode à l'Amour Maternel", id: 1, image: 'https://source.unsplash.com/800x300/?mother' },
+  { title: "L'Essence des Poèmes d'Amour", id: 2, image: 'https://source.unsplash.com/800x300/?love' },
+  { title: "Poème de Arthur Rimbaud", id: 3, image: 'https://source.unsplash.com/800x300/?poet' },
   // Add more posts as needed
 ];
 
