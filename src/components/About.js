@@ -3,14 +3,13 @@ import { Container, Typography, Card, CardMedia } from '@mui/material';
 
 const About = () => (
   <Container>
-
-    {/* Title */}
-    <Typography variant="h2" gutterBottom>
+    {/* Title with bottom margin */}
+    <Typography variant="h2" gutterBottom sx={{ marginBottom: 4 }}> {/* Adjust the value as needed */}
       À propos
     </Typography>
 
-    {/* Image */}
-    <Card>
+    {/* Image with bottom margin */}
+    <Card sx={{ marginBottom: 4 }}> {/* Adjust the value as needed */}
       <CardMedia
         component="img"
         height="140"
@@ -18,7 +17,6 @@ const About = () => (
         alt="Nature"
       />
     </Card>
-
 
     {/* Text Paragraph */}
     <Typography variant="body1" gutterBottom>
