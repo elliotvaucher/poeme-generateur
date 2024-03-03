@@ -2,13 +2,14 @@ from openai import OpenAI
 import openpyxl
 import json
 import os
+from dotenv import load_dotenv
 
 # Configuration
 EXCEL_FILE = 'keywords.xlsx'
 INDEX_FILE = 'index.txt'
 TEMPLATE_FILE = 'template.md'
 OUTPUT_DIR = './articles/'
-OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 # Initialize OpenAI
 client = OpenAI(
@@ -34,10 +35,10 @@ def get_keyword(excel_file, index):
 
 def generate_article(keyword, template):
     # Adjust the prompt to fit your template's requirements.
-    prompt = f"I will give you a {template} article in markdown, and a {keyword}. I want you to write a blog article, in French, about {keyword} in the form of the {template}."
+    prompt = f"Write the content of an inspiring and interesting blog article, in French, about {keyword} in the form of the {template}. Replace lorem ipsum with actual content."
 
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": prompt}

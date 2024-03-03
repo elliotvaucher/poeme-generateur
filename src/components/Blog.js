@@ -6,7 +6,13 @@ import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/m
 const blogPosts = [
   { title: "Poèmes pour Maman : Une Ode à l'Amour Maternel", id: 1, image: 'https://source.unsplash.com/800x300/?mother' },
   { title: "L'Essence des Poèmes d'Amour", id: 2, image: 'https://source.unsplash.com/800x300/?love' },
-  { title: "Poème de Arthur Rimbaud", id: 3, image: 'https://source.unsplash.com/800x300/?poet' },
+  { title: "Poèmes pour Papa : Une Ode à l'Amour Paternel", id: 3, image: 'https://source.unsplash.com/800x300/?father' },
+  { title: "Fête des pères en Maternelle", id: 4, image: 'https://source.unsplash.com/800x300/?father' },
+  { title: "L'importance du poème engagé", id: 5, image: 'https://source.unsplash.com/800x300/?revolution' },
+  { title: "La poésie d'Arthur Rimbaud", id: 6, image: 'https://source.unsplash.com/800x300/?poet' },
+  { title: "Importance du Poème dans un Mariage", id: 7, image: 'https://source.unsplash.com/800x300/?wedding' },
+  { title: "Poème érotique", id: 9, image: 'https://source.unsplash.com/800x300/?couple' },
+
   // Add more posts as needed
 ];
 
