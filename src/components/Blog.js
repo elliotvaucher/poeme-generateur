@@ -12,6 +12,9 @@ const blogPosts = [
   { title: "La poésie d'Arthur Rimbaud", id: 6, image: 'https://source.unsplash.com/800x300/?poet' },
   { title: "Importance du Poème dans un Mariage", id: 7, image: 'https://source.unsplash.com/800x300/?wedding' },
   { title: "Poème érotique", id: 9, image: 'https://source.unsplash.com/800x300/?couple' },
+  { title: "Paul Eluard : Poème", id: 10, image: 'https://source.unsplash.com/800x300/?writing' },
+  { title: "Poème sur la mer", id: 11, image: 'https://source.unsplash.com/800x300/?ocean' },
+  { title: "Emily Dickinson : Poème", id: 12, image: 'https://source.unsplash.com/800x300/?nature'}
 
   // Add more posts as needed
 ];
