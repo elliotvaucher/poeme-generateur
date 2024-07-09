@@ -9,7 +9,7 @@ const links = [
 ];
 
 // Create a new sitemap stream
-const sitemap = new SitemapStream({ hostname: 'https://yourdomain.com' });
+const sitemap = new SitemapStream({ hostname: 'https://tonpoeme.fr' });
 
 // Convert the sitemap stream to a promise that resolves with the complete XML string
 const sitemapPromise = streamToPromise(sitemap).then(sitemapContent => sitemapContent.toString());
