@@ -21,7 +21,7 @@ const PoemForm = ({ onSubmit }) => {
         value={theme}
         onChange={(e) => setTheme(e.target.value)}
       >
-        {['amour', 'famille', 'nature'].map((option) => (
+        {['amour', 'famille', 'nature', 'érotique'].map((option) => (
           <MenuItem key={option} value={option}>
             {option}
           </MenuItem>
