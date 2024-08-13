@@ -38,7 +38,7 @@ def generate_article(keyword, template):
     prompt = f"Write the content of an inspiring and interesting blog article, in French, about {keyword} in the form of the {template}. Replace lorem ipsum with actual content."
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-4o-mini",
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": prompt}
